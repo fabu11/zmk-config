@@ -17,7 +17,7 @@
         tri_layer {
             // Hold both thumbs (layer 1 + layer 2) to activate layer 3
 
-            if-layers = <4 2>;
+            if-layers = <1 2>;
             then-layer = <3>;
         };
     };
