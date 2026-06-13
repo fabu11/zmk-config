@@ -17,7 +17,7 @@
             // Hold both thumbs (layer 1 + layer 2) to activate layer 3
 
             if-layers = <1 2>;
-            then-layer = <3>;
+            then-layer = <4>;
         };
     };
 
@@ -32,10 +32,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE          &kp Q  &kp W  &kp E     &kp R           &kp T        &kp Y                       &kp U  &kp I            &kp O    &kp P     &kp DEL
-&mt LEFT_SHIFT TAB  &kp A  &kp S  &kp D     &kp F           &kp G        &kp H                       &kp J  &kp K            &kp L    &kp SEMI  &mt RIGHT_SHIFT SINGLE_QUOTE
-&kp LEFT_CONTROL    &kp Z  &kp X  &kp C     &kp V           &kp B        &kp N                       &kp M  &kp COMMA        &kp DOT  &kp FSLH  &kp BACKSLASH
-                                  &kp LGUI  &lt 1 LEFT_ALT  &kp SPACE    &mt LEFT_CONTROL BACKSPACE  &mo 2  &mt RALT RETURN
+&kp ESCAPE          &kp Q  &kp W  &kp E     &kp R           &kp T        &kp Y                       &kp U             &kp I            &kp O    &kp P     &kp DEL
+&mt LEFT_SHIFT TAB  &kp A  &kp S  &kp D     &mt LEFT_ALT F  &kp G        &kp H                       &mt LEFT_SHIFT J  &kp K            &kp L    &kp SEMI  &mt RIGHT_SHIFT SINGLE_QUOTE
+&kp LEFT_CONTROL    &kp Z  &kp X  &kp C     &kp V           &kp B        &kp N                       &kp M             &kp COMMA        &kp DOT  &kp FSLH  &kp BACKSLASH
+                                  &kp LGUI  &lt 3 RETURN    &kp SPACE    &mt LEFT_CONTROL BACKSPACE  &mo 2             &mt RALT RETURN
             >;
         };
 
@@ -50,7 +50,7 @@
 &trans     &trans  &kp HOME  &kp UP_ARROW  &kp END    &trans       &trans                      &kp N7        &kp N8        &kp N9        &trans  &kp DEL
 &trans     &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans       &trans                      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
 &kp LSHFT  &trans  &trans    &trans        &trans     &trans       &trans                      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
-                             &kp LGUI      &trans     &kp SPACE    &mt LEFT_CONTROL BACKSLASH  &kp N0        &kp RALT
+                             &kp LGUI      &trans     &kp SPACE    &mt LEFT_CONTROL BACKSLASH  &kp NUMBER_0  &kp RALT
             >;
         };
 
@@ -69,7 +69,16 @@
             >;
         };
 
-        layer_3 {
+        lowerv2 {
+            bindings = <
+&kp ESC             &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5       &kp HOME                    &trans    &trans    &trans        &trans     &kp DEL
+&mt LEFT_SHIFT TAB  &kp NUMBER_6  &kp N7        &kp N8        &kp N9        &kp N0       &kp END                     &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
+&kp LEFT_CONTROL    &trans        &trans        &trans        &trans        &trans       &trans                      &trans    &trans    &trans        &trans     &trans
+                                                &kp LGUI      &trans        &kp SPACE    &mt LEFT_CONTROL BACKSLASH  &kp N0    &kp RALT
+            >;
+        };
+
+        util {
             // -----------------------------------------------------------------------------------------
             // |  F1  |  F2 |  F3 |  F4 |  F5 |  F6 |   |  F7  |  F8  |  F9  | F10 | F11 | F12 |
             // | CLR  | BT0 | BT1 | BT2 | BT3 | VOL+|   | VOL- | PREV | P/P  | NEXT|     |     |
