@@ -12,8 +12,10 @@
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
+
         tri_layer {
             // Hold both thumbs (layer 1 + layer 2) to activate layer 3
+
             if-layers = <1 2>;
             then-layer = <3>;
         };
@@ -45,10 +47,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp GRAVE  &kp TILDE        &trans  &trans    &trans  &trans       &trans                      &kp N7        &kp N8        &kp N9        &trans  &kp DEL
-&trans     &kp EXCLAMATION  &trans  &trans    &trans  &trans       &trans                      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
-&kp LSHFT  &trans           &trans  &trans    &trans  &trans       &trans                      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
-                                    &kp LGUI  &trans  &kp SPACE    &mt LEFT_CONTROL BACKSLASH  &kp N0        &kp RALT
+&trans     &trans  &kp HOME  &kp UP_ARROW  &kp END    &trans       &trans                      &kp N7        &kp N8        &kp N9        &trans  &kp DEL
+&trans     &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans       &trans                      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
+&kp LSHFT  &trans  &trans    &trans        &trans     &trans       &trans                      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
+                             &kp LGUI      &trans     &kp SPACE    &mt LEFT_CONTROL BACKSLASH  &kp N0        &kp RALT
             >;
         };
 
@@ -87,5 +89,6 @@
 &led_strip {
     // Set to your actual per-side LED count. 42-key Corne v3 = 27
     // (21 per-key + 6 underglow). Count the SK6812 chips on one half to confirm.
+
     chain-length = <27>;
 };
