@@ -17,8 +17,8 @@
         tri_layer {
             // Hold both thumbs (layer 1 + layer 2) to activate layer 3
 
-            if-layers = <1 2>;
-            then-layer = <4>;
+            if-layers = <4 2>;
+            then-layer = <3>;
         };
     };
 
@@ -36,22 +36,16 @@
 &kp ESCAPE          &kp Q  &kp W  &kp E     &kp R           &kp T        &kp Y                       &kp U             &kp I            &kp O    &kp P     &kp DEL
 &mt LEFT_SHIFT TAB  &kp A  &kp S  &kp D     &mt LEFT_ALT F  &kp G        &kp H                       &mt LEFT_SHIFT J  &kp K            &kp L    &kp SEMI  &mt RIGHT_SHIFT SINGLE_QUOTE
 &kp LEFT_CONTROL    &kp Z  &kp X  &kp C     &kp V           &kp B        &kp N                       &kp M             &kp COMMA        &kp DOT  &kp FSLH  &kp BACKSLASH
-                                  &kp LGUI  &lt 3 RETURN    &kp SPACE    &mt LEFT_CONTROL BACKSPACE  &mo 2             &mt RALT RETURN
+                                  &kp LGUI  &lt 1 RETURN    &kp SPACE    &mt LEFT_CONTROL BACKSPACE  &mo 2             &mt RALT RETURN
             >;
         };
 
-        lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        lowerv2 {
             bindings = <
-&trans     &trans  &kp HOME  &kp UP_ARROW  &kp END    &trans       &trans                      &kp N7        &kp N8        &kp N9        &trans  &kp DEL
-&trans     &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans       &trans                      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
-&kp LSHFT  &trans  &trans    &trans        &trans     &trans       &trans                      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
-                             &kp LGUI      &trans     &kp SPACE    &mt LEFT_CONTROL BACKSLASH  &kp NUMBER_0  &kp RALT
+&kp ESC             &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5       &kp HOME                    &trans    &trans    &trans        &trans     &kp DEL
+&mt LEFT_SHIFT TAB  &kp NUMBER_6  &kp N7        &kp N8        &kp N9        &kp N0       &kp END                     &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
+&kp LEFT_CONTROL    &trans        &trans        &trans        &trans        &trans       &trans                      &trans    &trans    &trans        &trans     &trans
+                                                &kp LGUI      &trans        &kp SPACE    &mt LEFT_CONTROL BACKSLASH  &trans    &kp RALT
             >;
         };
 
@@ -70,15 +64,6 @@
             >;
         };
 
-        lowerv2 {
-            bindings = <
-&kp ESC             &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5       &kp HOME                    &trans    &trans    &trans        &trans     &kp DEL
-&mt LEFT_SHIFT TAB  &kp NUMBER_6  &kp N7        &kp N8        &kp N9        &kp N0       &kp END                     &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
-&kp LEFT_CONTROL    &trans        &trans        &trans        &trans        &trans       &trans                      &trans    &trans    &trans        &trans     &trans
-                                                &kp LGUI      &trans        &kp SPACE    &mt LEFT_CONTROL BACKSLASH  &trans    &kp RALT
-            >;
-        };
-
         util {
             // -----------------------------------------------------------------------------------------
             // |  F1  |  F2 |  F3 |  F4 |  F5 |  F6 |   |  F7  |  F8  |  F9  | F10 | F11 | F12 |
@@ -91,6 +76,21 @@
 &bt BT_CLR_ALL   &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &kp C_VOL_UP       &kp C_VOL_DN  &kp C_PREV  &kp C_PP  &kp C_NEXT  &trans   &ext_power EP_TOG
 &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD    &trans        &trans      &trans    &trans      &trans   &studio_unlock
                                                    &kp LEFT_GUI     &trans           &trans             &trans        &trans      &trans
+            >;
+        };
+
+        lower_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
+            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            bindings = <
+&trans     &trans  &kp HOME  &kp UP_ARROW  &kp END    &trans       &trans                      &kp N7        &kp N8        &kp N9        &trans  &kp DEL
+&trans     &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans       &trans                      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
+&kp LSHFT  &trans  &trans    &trans        &trans     &trans       &trans                      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
+                             &kp LGUI      &trans     &kp SPACE    &mt LEFT_CONTROL BACKSLASH  &kp NUMBER_0  &kp RALT
             >;
         };
     };
